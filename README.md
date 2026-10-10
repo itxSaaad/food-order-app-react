@@ -1,5 +1,16 @@
 # Food Order App - React
 
+## Architecture
+
+```mermaid
+flowchart LR
+  Customer -->|browse menu, add items, and review cart| App[React food ordering app\nVercel SPA deployment]
+  App --> Components[Menu, cart, and checkout components]
+  Components --> State[React context and reducer state]
+  State --> Components
+  Components --> Customer
+```
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/697a3dd0-4975-4db9-86b2-9db7028f1570/deploy-status)](https://app.netlify.com/sites/reactive-meals-react/deploys)
 
 ## Description
@@ -48,3 +59,8 @@ To get the frontend running locally:
 ## Support Me
 
 <a href="https://www.buymeacoffee.com/itxSaaad"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="200" /></a>
+
+## Vercel Deployment
+Vite SPA served from the repository root; client-side routes rewrite to index.html.
+See the repository-root [vercel.json](./vercel.json) for build roots and routing. Configure private values in Vercel Project Settings; never commit secrets.
+
